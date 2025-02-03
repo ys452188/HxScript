@@ -117,10 +117,10 @@ bool leverDefineVariable(const wchar_t* command) {
         wcsncpy(name, nameB, len);
         name[len] = L'\0';  // 确保字符串结尾
         //提取类型
-        if(!(wcsstr(p,L':') == NULL)) {
+        if(!(wcsstr(p,L":") == NULL)) {
             fwprintf(stderr,L"\33[38;2;255;0;0m错误：未指定变量类型\33[0m\n");
         } else {
-            p = wcsstr(p,L':');
+            p = wcsstr(p,L":");
         }
         free(command1);  // 释放字符串副本
         return true;
