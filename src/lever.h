@@ -474,7 +474,7 @@ bool callFunction(const wchar_t* Ucommand) {
             args[argsLen] = L'\0';
 
             /*--------------------调试输出--------------------*/
-            printf("函数名：%ls\n", functionName);
+            wprintf(L"函数名：%ls\n", functionName);
             if (argsLen > 0) {
                 wprintf(L"参数：%ls\n", args);
             } else {
