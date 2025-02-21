@@ -4,379 +4,281 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:8 (project)"
     message: |
-      The system is: Android - 24 - aarch64
+      The system is: Windows - 10.0.22621 - AMD64
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /data/data/com.termux/files/usr/bin/cc 
+      Compiler: gcc 
       Build flags: 
       Id flags:  
       
       The output was:
       0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.9+a69bbaaf5
+      鐢熸垚鍚姩鏃堕棿涓?2025/2/21 15:55:07銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdC.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:02.50
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
       
-      The C compiler identification is Clang, found in:
-        /storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/3.31.5/CompilerIdC/a.out
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/HxScript/build/CMakeFiles/3.31.5/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /data/data/com.termux/files/usr/bin/c++ 
+      Compiler: g++ 
       Build flags: 
       Id flags:  
       
       The output was:
       0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.9+a69bbaaf5
+      鐢熸垚鍚姩鏃堕棿涓?2025/2/21 15:55:11銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdCXX.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\HxScript\\build\\CMakeFiles\\3.31.5\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:02.78
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
       
-      The CXX compiler identification is Clang, found in:
-        /storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/3.31.5/CompilerIdCXX/a.out
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/HxScript/build/CMakeFiles/3.31.5/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/\u9ed8\u8ba4\u76ee\u5f55/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z"
-      binary: "/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/\u9ed8\u8ba4\u76ee\u5f55/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z"
+      source: "D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-7grafu"
+      binary: "D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-7grafu"
     cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
-      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z'
+        Change Dir: 'D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-7grafu'
         
-        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_e1aad/fast
-        /data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_e1aad.dir/build.make CMakeFiles/cmTC_e1aad.dir/build
-        make[1]: Entering directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z'
-        Building C object CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o
-        /data/data/com.termux/files/usr/bin/cc   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
-        clang version 19.1.7
-        Target: aarch64-unknown-linux-android24
-        Thread model: posix
-        InstalledDir: /data/data/com.termux/files/usr/bin
-         (in-process)
-         "/data/data/com.termux/files/usr/bin/clang-19" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z -v -fcoverage-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z -resource-dir /data/data/com.termux/files/usr/lib/clang/19 -dependency-file CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files -internal-isystem /data/data/com.termux/files/usr/lib/clang/19/include -internal-isystem /data/data/com.termux/files/usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/include -internal-externc-isystem /data/data/com.termux/files/usr/include -O2 -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -x c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target aarch64-unknown-linux-android24
-        ignoring nonexistent directory "/data/data/com.termux/files/usr/local/include"
-        ignoring nonexistent directory "/data/data/com.termux/files/include"
-        #include "..." search starts here:
-        #include <...> search starts here:
-         /data/data/com.termux/files/usr/lib/clang/19/include
-         /data/data/com.termux/files/usr/include/aarch64-linux-android
-         /data/data/com.termux/files/usr/include
-        End of search list.
-        Linking C executable cmTC_e1aad
-        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1aad.dir/link.txt --verbose=1
-        clang version 19.1.7
-        Target: aarch64-unknown-linux-android24
-        Thread model: posix
-        InstalledDir: /data/data/com.termux/files/usr/bin
-         "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --hash-style=gnu -rpath=/data/data/com.termux/files/usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_e1aad /data/data/com.termux/files/usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/lib -L/system/lib64 CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/lib/crtend_android.o
-        /data/data/com.termux/files/usr/bin/cc -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -o cmTC_e1aad
-        make[1]: Leaving directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z'
+        Run Build Command(s): D:/VisualStudio2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_c7fbe.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.9+a69bbaaf5
+        鐢熸垚鍚姩鏃堕棿涓?2025/2/21 15:55:14銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7grafu\\cmTC_c7fbe.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c7fbe.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7grafu\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c7fbe.dir\\Debug\\cmTC_c7fbe.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_c7fbe.dir\\Debug\\cmTC_c7fbe.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_c7fbe.dir\\Debug\\cmTC_c7fbe.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c7fbe.dir\\Debug\\\\" /Fd"cmTC_c7fbe.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.41.34120 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c7fbe.dir\\Debug\\\\" /Fd"cmTC_c7fbe.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7grafu\\Debug\\cmTC_c7fbe.exe" /INCREMENTAL /ILK:"cmTC_c7fbe.dir\\Debug\\cmTC_c7fbe.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-7grafu/Debug/cmTC_c7fbe.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-7grafu/Debug/cmTC_c7fbe.lib" /MACHINE:X64  /machine:x64 cmTC_c7fbe.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_c7fbe.vcxproj -> D:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7grafu\\Debug\\cmTC_c7fbe.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_c7fbe.dir\\Debug\\cmTC_c7fbe.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_c7fbe.dir\\Debug\\cmTC_c7fbe.tlog\\cmTC_c7fbe.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7grafu\\cmTC_c7fbe.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:02.06
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
-    message: |
-      Parsed C implicit include dir info: rv=done
-        found start of include info
-        found start of implicit include info
-          add: [/data/data/com.termux/files/usr/lib/clang/19/include]
-          add: [/data/data/com.termux/files/usr/include/aarch64-linux-android]
-          add: [/data/data/com.termux/files/usr/include]
-        end of search list found
-        collapse include dir [/data/data/com.termux/files/usr/lib/clang/19/include] ==> [/data/data/com.termux/files/usr/lib/clang/19/include]
-        collapse include dir [/data/data/com.termux/files/usr/include/aarch64-linux-android] ==> [/data/data/com.termux/files/usr/include/aarch64-linux-android]
-        collapse include dir [/data/data/com.termux/files/usr/include] ==> [/data/data/com.termux/files/usr/include]
-        implicit include dirs: [/data/data/com.termux/files/usr/lib/clang/19/include;/data/data/com.termux/files/usr/include/aarch64-linux-android;/data/data/com.termux/files/usr/include]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     message: |
       Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z']
-        ignore line: []
-        ignore line: [Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_e1aad/fast]
-        ignore line: [/data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_e1aad.dir/build.make CMakeFiles/cmTC_e1aad.dir/build]
-        ignore line: [make[1]: Entering directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z']
-        ignore line: [Building C object CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/data/data/com.termux/files/usr/bin/cc   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang version 19.1.7]
-        ignore line: [Target: aarch64-unknown-linux-android24]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
-        ignore line: [ (in-process)]
-        ignore line: [ "/data/data/com.termux/files/usr/bin/clang-19" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z -v -fcoverage-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-vN6U9z -resource-dir /data/data/com.termux/files/usr/lib/clang/19 -dependency-file CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files -internal-isystem /data/data/com.termux/files/usr/lib/clang/19/include -internal-isystem /data/data/com.termux/files/usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/include -internal-externc-isystem /data/data/com.termux/files/usr/include -O2 -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o -x c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target aarch64-unknown-linux-android24]
-        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/include"]
-        ignore line: [#include "..." search starts here:]
-        ignore line: [#include <...> search starts here:]
-        ignore line: [ /data/data/com.termux/files/usr/lib/clang/19/include]
-        ignore line: [ /data/data/com.termux/files/usr/include/aarch64-linux-android]
-        ignore line: [ /data/data/com.termux/files/usr/include]
-        ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_e1aad]
-        ignore line: [/data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1aad.dir/link.txt --verbose=1]
-        ignore line: [clang version 19.1.7]
-        ignore line: [Target: aarch64-unknown-linux-android24]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
-        link line: [ "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --hash-style=gnu -rpath=/data/data/com.termux/files/usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_e1aad /data/data/com.termux/files/usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/lib -L/system/lib64 CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/lib/crtend_android.o]
-          arg [/data/data/com.termux/files/usr/bin/ld.lld] ==> ignore
-          arg [--sysroot=/data/data/com.termux/files] ==> ignore
-          arg [-EL] ==> ignore
-          arg [--fix-cortex-a53-843419] ==> ignore
-          arg [-znow] ==> ignore
-          arg [-zrelro] ==> ignore
-          arg [-zmax-page-size=16384] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
-          arg [-rpath=/data/data/com.termux/files/usr/lib] ==> ignore
-          arg [--eh-frame-hdr] ==> ignore
-          arg [-m] ==> ignore
-          arg [aarch64linux] ==> ignore
-          arg [-pie] ==> ignore
-          arg [-dynamic-linker] ==> ignore
-          arg [/system/bin/linker64] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_e1aad] ==> ignore
-          arg [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o] ==> obj [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o]
-          arg [-L/data/data/com.termux/files/usr/lib] ==> dir [/data/data/com.termux/files/usr/lib]
-          arg [-L/system/lib64] ==> dir [/system/lib64]
-          arg [CMakeFiles/cmTC_e1aad.dir/CMakeCCompilerABI.c.o] ==> ignore
-          arg [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
-          arg [-ldl] ==> lib [dl]
-          arg [-lc] ==> lib [c]
-          arg [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
-          arg [-ldl] ==> lib [dl]
-          arg [/data/data/com.termux/files/usr/lib/crtend_android.o] ==> obj [/data/data/com.termux/files/usr/lib/crtend_android.o]
-        linker tool for 'C': /data/data/com.termux/files/usr/bin/ld.lld
-        remove lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-        remove lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-        collapse library dir [/data/data/com.termux/files/usr/lib] ==> [/data/data/com.termux/files/usr/lib]
-        collapse library dir [/system/lib64] ==> [/system/lib64]
-        implicit libs: [-l:libunwind.a;dl;c;-l:libunwind.a;dl]
-        implicit objs: [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o;/data/data/com.termux/files/usr/lib/crtend_android.o]
-        implicit dirs: [/data/data/com.termux/files/usr/lib;/system/lib64]
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': D:/VisualStudio2022/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
         implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     message: |
-      Running the C compiler's linker: "/data/data/com.termux/files/usr/bin/ld.lld" "-v"
-      LLD 19.1.7 (compatible with GNU linkers)
+      Running the C compiler's linker: "D:/VisualStudio2022/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/\u9ed8\u8ba4\u76ee\u5f55/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb"
-      binary: "/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/\u9ed8\u8ba4\u76ee\u5f55/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb"
+      source: "D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-8h21e0"
+      binary: "D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-8h21e0"
     cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
-      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb'
+        Change Dir: 'D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-8h21e0'
         
-        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_92bd5/fast
-        /data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_92bd5.dir/build.make CMakeFiles/cmTC_92bd5.dir/build
-        make[1]: Entering directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb'
-        Building CXX object CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o
-        /data/data/com.termux/files/usr/bin/c++   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
-        clang version 19.1.7
-        Target: aarch64-unknown-linux-android24
-        Thread model: posix
-        InstalledDir: /data/data/com.termux/files/usr/bin
-         (in-process)
-         "/data/data/com.termux/files/usr/bin/clang-19" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb -v -fcoverage-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb -resource-dir /data/data/com.termux/files/usr/lib/clang/19 -dependency-file CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files -internal-isystem /data/data/com.termux/files/usr/include/c++/v1 -internal-isystem /data/data/com.termux/files/usr/lib/clang/19/include -internal-isystem /data/data/com.termux/files/usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/include -internal-externc-isystem /data/data/com.termux/files/usr/include -O2 -fdeprecated-macro -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
-        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target aarch64-unknown-linux-android24
-        ignoring nonexistent directory "/data/data/com.termux/files/usr/local/include"
-        ignoring nonexistent directory "/data/data/com.termux/files/include"
-        #include "..." search starts here:
-        #include <...> search starts here:
-         /data/data/com.termux/files/usr/include/c++/v1
-         /data/data/com.termux/files/usr/lib/clang/19/include
-         /data/data/com.termux/files/usr/include/aarch64-linux-android
-         /data/data/com.termux/files/usr/include
-        End of search list.
-        Linking CXX executable cmTC_92bd5
-        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92bd5.dir/link.txt --verbose=1
-        clang version 19.1.7
-        Target: aarch64-unknown-linux-android24
-        Thread model: posix
-        InstalledDir: /data/data/com.termux/files/usr/bin
-         "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --hash-style=gnu -rpath=/data/data/com.termux/files/usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_92bd5 /data/data/com.termux/files/usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/lib -L/system/lib64 CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -lc++_shared /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lm -lc /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/lib/crtend_android.o
-        /data/data/com.termux/files/usr/bin/c++ -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_92bd5
-        make[1]: Leaving directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb'
+        Run Build Command(s): D:/VisualStudio2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_e5f38.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.9+a69bbaaf5
+        鐢熸垚鍚姩鏃堕棿涓?2025/2/21 15:55:17銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8h21e0\\cmTC_e5f38.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_e5f38.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8h21e0\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_e5f38.dir\\Debug\\cmTC_e5f38.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_e5f38.dir\\Debug\\cmTC_e5f38.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_e5f38.dir\\Debug\\cmTC_e5f38.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5f38.dir\\Debug\\\\" /Fd"cmTC_e5f38.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.41.34120 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5f38.dir\\Debug\\\\" /Fd"cmTC_e5f38.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          D:\\VisualStudio2022\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8h21e0\\Debug\\cmTC_e5f38.exe" /INCREMENTAL /ILK:"cmTC_e5f38.dir\\Debug\\cmTC_e5f38.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-8h21e0/Debug/cmTC_e5f38.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-8h21e0/Debug/cmTC_e5f38.lib" /MACHINE:X64  /machine:x64 cmTC_e5f38.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e5f38.vcxproj -> D:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8h21e0\\Debug\\cmTC_e5f38.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_e5f38.dir\\Debug\\cmTC_e5f38.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_e5f38.dir\\Debug\\cmTC_e5f38.tlog\\cmTC_e5f38.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\HxScript\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8h21e0\\cmTC_e5f38.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:02.15
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
-    message: |
-      Parsed CXX implicit include dir info: rv=done
-        found start of include info
-        found start of implicit include info
-          add: [/data/data/com.termux/files/usr/include/c++/v1]
-          add: [/data/data/com.termux/files/usr/lib/clang/19/include]
-          add: [/data/data/com.termux/files/usr/include/aarch64-linux-android]
-          add: [/data/data/com.termux/files/usr/include]
-        end of search list found
-        collapse include dir [/data/data/com.termux/files/usr/include/c++/v1] ==> [/data/data/com.termux/files/usr/include/c++/v1]
-        collapse include dir [/data/data/com.termux/files/usr/lib/clang/19/include] ==> [/data/data/com.termux/files/usr/lib/clang/19/include]
-        collapse include dir [/data/data/com.termux/files/usr/include/aarch64-linux-android] ==> [/data/data/com.termux/files/usr/include/aarch64-linux-android]
-        collapse include dir [/data/data/com.termux/files/usr/include] ==> [/data/data/com.termux/files/usr/include]
-        implicit include dirs: [/data/data/com.termux/files/usr/include/c++/v1;/data/data/com.termux/files/usr/lib/clang/19/include;/data/data/com.termux/files/usr/include/aarch64-linux-android;/data/data/com.termux/files/usr/include]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     message: |
       Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb']
-        ignore line: []
-        ignore line: [Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_92bd5/fast]
-        ignore line: [/data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_92bd5.dir/build.make CMakeFiles/cmTC_92bd5.dir/build]
-        ignore line: [make[1]: Entering directory '/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb']
-        ignore line: [Building CXX object CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/data/data/com.termux/files/usr/bin/c++   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang version 19.1.7]
-        ignore line: [Target: aarch64-unknown-linux-android24]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
-        ignore line: [ (in-process)]
-        ignore line: [ "/data/data/com.termux/files/usr/bin/clang-19" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb -v -fcoverage-compilation-dir=/storage/emulated/0/Android/data/com.cjkj.clanide/files/CJ_IDE/CProject/默认目录/HxScript/build/CMakeFiles/CMakeScratch/TryCompile-CXYbqb -resource-dir /data/data/com.termux/files/usr/lib/clang/19 -dependency-file CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files -internal-isystem /data/data/com.termux/files/usr/include/c++/v1 -internal-isystem /data/data/com.termux/files/usr/lib/clang/19/include -internal-isystem /data/data/com.termux/files/usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/include -internal-externc-isystem /data/data/com.termux/files/usr/include -O2 -fdeprecated-macro -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target aarch64-unknown-linux-android24]
-        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/include"]
-        ignore line: [#include "..." search starts here:]
-        ignore line: [#include <...> search starts here:]
-        ignore line: [ /data/data/com.termux/files/usr/include/c++/v1]
-        ignore line: [ /data/data/com.termux/files/usr/lib/clang/19/include]
-        ignore line: [ /data/data/com.termux/files/usr/include/aarch64-linux-android]
-        ignore line: [ /data/data/com.termux/files/usr/include]
-        ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_92bd5]
-        ignore line: [/data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92bd5.dir/link.txt --verbose=1]
-        ignore line: [clang version 19.1.7]
-        ignore line: [Target: aarch64-unknown-linux-android24]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
-        link line: [ "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --hash-style=gnu -rpath=/data/data/com.termux/files/usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_92bd5 /data/data/com.termux/files/usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/lib -L/system/lib64 CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o -lc++_shared /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lm -lc /data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/lib/crtend_android.o]
-          arg [/data/data/com.termux/files/usr/bin/ld.lld] ==> ignore
-          arg [--sysroot=/data/data/com.termux/files] ==> ignore
-          arg [-EL] ==> ignore
-          arg [--fix-cortex-a53-843419] ==> ignore
-          arg [-znow] ==> ignore
-          arg [-zrelro] ==> ignore
-          arg [-zmax-page-size=16384] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
-          arg [-rpath=/data/data/com.termux/files/usr/lib] ==> ignore
-          arg [--eh-frame-hdr] ==> ignore
-          arg [-m] ==> ignore
-          arg [aarch64linux] ==> ignore
-          arg [-pie] ==> ignore
-          arg [-dynamic-linker] ==> ignore
-          arg [/system/bin/linker64] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_92bd5] ==> ignore
-          arg [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o] ==> obj [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o]
-          arg [-L/data/data/com.termux/files/usr/lib] ==> dir [/data/data/com.termux/files/usr/lib]
-          arg [-L/system/lib64] ==> dir [/system/lib64]
-          arg [CMakeFiles/cmTC_92bd5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-          arg [-lc++_shared] ==> lib [c++_shared]
-          arg [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
-          arg [-ldl] ==> lib [dl]
-          arg [-lm] ==> lib [m]
-          arg [-lc] ==> lib [c]
-          arg [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
-          arg [-ldl] ==> lib [dl]
-          arg [/data/data/com.termux/files/usr/lib/crtend_android.o] ==> obj [/data/data/com.termux/files/usr/lib/crtend_android.o]
-        linker tool for 'CXX': /data/data/com.termux/files/usr/bin/ld.lld
-        remove lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-        remove lib [/data/data/com.termux/files/usr/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a]
-        collapse library dir [/data/data/com.termux/files/usr/lib] ==> [/data/data/com.termux/files/usr/lib]
-        collapse library dir [/system/lib64] ==> [/system/lib64]
-        implicit libs: [c++_shared;-l:libunwind.a;dl;m;c;-l:libunwind.a;dl]
-        implicit objs: [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o;/data/data/com.termux/files/usr/lib/crtend_android.o]
-        implicit dirs: [/data/data/com.termux/files/usr/lib;/system/lib64]
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': D:/VisualStudio2022/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
         implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "/data/data/com.termux/files/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:4 (project)"
+      - "D:/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "D:/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
     message: |
-      Running the CXX compiler's linker: "/data/data/com.termux/files/usr/bin/ld.lld" "-v"
-      LLD 19.1.7 (compatible with GNU linkers)
+      Running the CXX compiler's linker: "D:/VisualStudio2022/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
 ...

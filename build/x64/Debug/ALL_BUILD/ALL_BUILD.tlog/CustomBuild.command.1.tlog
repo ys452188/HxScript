@@ -1,0 +1,10 @@
+^D:\HXSCRIPT\CMAKELISTS.TXT
+setlocal
+D:\CMake\bin\cmake.exe -SD:/HxScript -BD:/HxScript/build --check-stamp-file D:/HxScript/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -410,6 +410,291 @@ bool leverDefineVariable(const wchar_t* command) {
     free(command1);
     return false;
 }
+
+//con const1: int = 114514
+bool leverDefineConstant(const wchar_t* command) {
+    setlocale(LC_ALL,"chinese");
+    if (command == NULL) {
+        return false;
+    }
+    wchar_t* command1 = wcsdup(command);  // 复制字符串，避免修改原始数据
+    if (command1 == NULL) {
+        fwprintf(stderr, L"内存分配失败\n");
+        exit(1);
+    }
+    wchar_t* p = command1;  // 指针 p 用于遍历
+    // 跳过前导空格和Tab
+    while (*p == L' ' || *p == L'\t') {
+        p++;
+    }
+    // 检查是否是 "con "
+    if (wcslen(p) >= 3 && p[0] == L'c' && p[1] == L'o' && p[2] == L'n' &&
+            (p[3] == L' ' || p[3] == L'\t')) {
+        p += 3;  // 跳过 "con"
+        if(p == NULL||*p == L'\0') {
+            return false;
+        }
+        while (*p == L' ' || *p == L'\t') {
+            p++;
+        }
+        if (*p == L'\0') {
+            fwprintf(stderr, L"错误：未指定常量名！\033[0m\n");
+            free(command1);
+            exit(1);
+        }
+        wchar_t* nameB = p;  //起始位置
+        //终点
+        while (*p && *p != L' ' && *p != L'\t' && *p != L':') {
+            p++;
+        }
+        size_t nameLen = p - nameB;
+        wchar_t* name = (wchar_t*)malloc((nameLen + 1) * sizeof(wchar_t));
+        if (name == NULL) {
+            fwprintf(stderr, L"内存分配失败\n");
+            free(command1);
+            exit(1);
+        }
+        wcsncpy(name, nameB, nameLen);
+        name[nameLen] = L'\0';
+        wprintf(L"name: %ls\n", name);
+        // 提取类型，要求后面有冒号
+        wchar_t* colonPos = wcsstr(p, L":");
+        if (colonPos == NULL) {
+            fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定常量类型\33[0m\n");
+            free(name);
+            free(command1);
+            exit(1);
+        }
+        colonPos++;  // 跳过冒号
+        // 跳过冒号后的空格
+        while (*colonPos == L' ' || *colonPos == L'\t') {
+            colonPos++;
+        }
+        wchar_t* typeB = colonPos;
+        // 以空格、Tab 或 '=' 为结束标志
+        while (*colonPos && *colonPos != L' ' && *colonPos != L'\t' && *colonPos != L'=') {
+            colonPos++;
+        }
+        size_t typeLen = colonPos - typeB;
+        wchar_t* type = (wchar_t*)malloc((typeLen + 1) * sizeof(wchar_t));
+        if (type == NULL) {
+            fwprintf(stderr, L"内存分配失败\n");
+            free(name);
+            free(command1);
+            exit(1);
+        }
+        wcsncpy(type, typeB, typeLen);
+        type[typeLen] = L'\0';
+        wprintf(L"type: %ls\n", type);
+        // 判断是否提供初始值
+        double value = 0;
+        wchar_t* equalPos = wcsstr(p, L"=");
+        if (equalPos != NULL) {
+            equalPos++;  // 跳过 '='
+            while (*equalPos == L' ' || *equalPos == L'\t') {
+                equalPos++;
+            }
+            if (*equalPos == L'\0') {
+                fwprintf(stderr, L"\033[38;2;255;0;0m错误：\"=\"后未指定初始值！\033[0m\n");
+                free(type);
+                free(name);
+                free(command1);
+                exit(1);
+            }
+            // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
+            wchar_t* valueStart = equalPos;
+            while (*equalPos && *equalPos != L' ' && *equalPos != L'\t' && *equalPos != L';') {
+                equalPos++;
+            }
+            size_t valueLen = equalPos - valueStart;
+            wchar_t* valueString = (wchar_t*)malloc((valueLen + 1) * sizeof(wchar_t));
+            if (valueString == NULL) {
+                fwprintf(stderr, L"内存分配失败\n");
+                free(type);
+                free(name);
+                free(command1);
+                exit(1);
+            }
+            wcsncpy(valueString, valueStart, valueLen);
+            valueString[valueLen] = L'\0';
+            wchar_t* cleanValue = wcsdup(valueString);
+            free(valueString);
+            while(*cleanValue == L' ') {
+                cleanValue++;
+            }
+
+
+            wprintf(L"%ls\n",cleanValue);
+
+
+            // 转换字符串到数值
+            printf("%d\n",isChar(cleanValue));
+
+
+            if (isChar(cleanValue)) {
+                value = (double)getWChar(cleanValue);
+            } else {
+                cleanValue = deleteSpaceAndTab(cleanValue);
+                if (isFloat(cleanValue)) {
+                    value = wcstod(cleanValue, NULL);
+                } else if (isInter(cleanValue)) {
+                    value = (double)wcstol(cleanValue, NULL, 10);
+                } else {
+                    fwprintf(stderr, L"错误：初始值格式不正确！\n");
+                    free(cleanValue);
+                    free(type);
+                    free(name);
+                    free(command1);
+                    exit(1);
+                }
+            }
+            free(cleanValue);
+            defineConstantPlus(type, name, true, value);
+        } else {
+            defineConstantPlus(type, name, false, 0);
+        }
+        free(type);
+        free(name);
+        free(command1);
+        return true;
+    }
+    // 检查是否是 "定义变量"
+    if (wcslen(p) >= 4 && p[0] == L'定' && p[1] == L'义' && p[2] == L'变' && p[3] == L'量'
+            && (p[4] == L' ' || p[4] == L'\t')) {
+        p += 4;  // 跳过
+        if(p == NULL || *p == L'\0') {
+            return false;
+        }
+        // 跳过空格
+        while (*p == L' ' || *p == L'\t') {
+            p++;
+        }
+        if (*p == L'\0') {
+            fwprintf(stderr, L"错误：未指定变量名！\033[0m\n");
+            free(command1);
+            exit(1);
+        }
+        wchar_t* nameB = p;  // 变量名起始位置
+        // 找到变量名的终点
+        while (*p && *p != L' ' && *p != L'\t' && *p != L':') {
+            p++;
+        }
+        size_t nameLen = p - nameB;
+        wchar_t* name = (wchar_t*)malloc((nameLen + 1) * sizeof(wchar_t));
+        if (name == NULL) {
+            fwprintf(stderr, L"内存分配失败\n");
+            free(command1);
+            exit(1);
+        }
+        wcsncpy(name, nameB, nameLen);
+        name[nameLen] = L'\0';
+        wprintf(L"name: %ls\n", name);
+        // 提取类型，要求后面有冒号
+        wchar_t* colonPos = wcsstr(p, L":");
+        if (colonPos == NULL) {
+            fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定变量类型\33[0m\n");
+            free(name);
+            free(command1);
+            exit(1);
+        }
+        colonPos++;  // 跳过冒号
+        // 跳过冒号后的空格
+        while (*colonPos == L' ' || *colonPos == L'\t') {
+            colonPos++;
+        }
+        wchar_t* typeB = colonPos;
+        // 以空格、Tab 或 '=' 为结束标志
+        while (*colonPos && *colonPos != L' ' && *colonPos != L'\t' && *colonPos != L'=') {
+            colonPos++;
+        }
+        size_t typeLen = colonPos - typeB;
+        wchar_t* type = (wchar_t*)malloc((typeLen + 1) * sizeof(wchar_t));
+        if (type == NULL) {
+            fwprintf(stderr, L"内存分配失败\n");
+            free(name);
+            free(command1);
+            exit(1);
+        }
+        wcsncpy(type, typeB, typeLen);
+        type[typeLen] = L'\0';
+        wprintf(L"type: %ls\n", type);
+        // 判断是否提供初始值
+        double value = 0;
+        wchar_t* equalPos = wcsstr(p, L"=");
+        if (equalPos != NULL) {
+            equalPos++;  // 跳过 '='
+            while (*equalPos == L' ' || *equalPos == L'\t') {
+                equalPos++;
+            }
+            if (*equalPos == L'\0') {
+                fwprintf(stderr, L"\033[38;2;255;0;0m错误：\"=\"后未指定初始值！\033[0m\n");
+                free(type);
+                free(name);
+                free(command1);
+                exit(1);
+            }
+            // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
+            wchar_t* valueStart = equalPos;
+            while (*equalPos && *equalPos != L' ' && *equalPos != L'\t' && *equalPos != L';') {
+                equalPos++;
+            }
+            size_t valueLen = equalPos - valueStart;
+            wchar_t* valueString = (wchar_t*)malloc((valueLen + 1) * sizeof(wchar_t));
+            if (valueString == NULL) {
+                fwprintf(stderr, L"内存分配失败\n");
+                free(type);
+                free(name);
+                free(command1);
+                exit(1);
+            }
+            wcsncpy(valueString, valueStart, valueLen);
+            valueString[valueLen] = L'\0';
+            // 去除值字符串中的空格和Tab（返回一个新字符串）
+            wchar_t* cleanValue = wcsdup(valueString);
+            free(valueString);
+            while(*cleanValue == L' ') {
+                cleanValue++;
+            }
+
+
+            wprintf(L"%ls\n",cleanValue);
+
+
+            // 转换字符串到数值
+            printf("%d\n",isChar(cleanValue));
+            if (isChar(cleanValue)) {
+                value = (double)getWChar(cleanValue);
+            } else {
+                cleanValue = deleteSpaceAndTab(cleanValue);
+                if (isFloat(cleanValue)) {
+                    value = wcstod(cleanValue, NULL);
+                } else if (isInter(cleanValue)) {
+                    value = (double)wcstol(cleanValue, NULL, 10);
+                } else {
+                    fwprintf(stderr, L"错误：初始值格式不正确！\n");
+                    free(cleanValue);
+                    free(type);
+                    free(name);
+                    free(command1);
+                    exit(1);
+                }
+            }
+            free(cleanValue);
+            // 调用定义变量的接口
+            defineVariablePlus(type, name, true, value);
+        } else {
+            // 没有初始值，调用定义变量接口（默认值为0）
+            defineVariablePlus(type, name, false, 0);
+        }
+        free(type);
+        free(name);
+        free(command1);
+        return true;
+    }
+    free(command1);
+    return false;
+}
+
 // 调用 func(args); call func(args);
 bool callFunction(const wchar_t* Ucommand) {
     setlocale(LC_ALL,"chinese");
@@ -491,6 +776,7 @@ bool callFunction(const wchar_t* Ucommand) {
     return false;
 }
 bool leverAssignment(const wchar_t* command1) {
+    setlocale(LC_ALL, "chinese");
     wchar_t* command = wcsdup(command1);
     if (command == NULL) {
         fwprintf(stderr, L"内存分配失败！\n");
@@ -532,22 +818,79 @@ bool leverAssignment(const wchar_t* command1) {
         var1B--;
     }
     var1B++;  // 移到变量名的开头位置
+
     size_t length = var1E - var1B + 1;
     wchar_t* variable1 = (wchar_t*)malloc(sizeof(wchar_t) * (length + 1));
     if (variable1 == NULL) {
         free(command);
-        fwprintf(stderr, L"\033[38;2;255;0;0m内存分配失败！\033[0m\n");
+        fwprintf(stderr, L"内存分配失败！\n");
         return false;
     }
+
     wcsncpy(variable1, var1B, length);
     variable1[length] = L'\0';
-    if(isInter(variable1) || isFloat(variable1)) {
-        fwprintf(stderr,L"\033[38;2;255;0;0m错误：变量名不能是数字！\033[0m\n");
+
+    /*******************************************************************/
+    // 判断变量名不能是数字
+    if (isInter(variable1) || isFloat(variable1)) {
+        fwprintf(stderr, L"错误：变量名不能是数字！\n");
+        free(variable1);
+        free(command);
         exit(1);
     }
+    /*******************************************************************/
 
+    // 赋值符号右侧处理
+    p = wcsstr(command, L"=");
+    p++;  // 跳过等号
+    while (*p == L' ' || *p == L'\t') {  // 跳过空格和制表符
+        p++;
+    }
+    if(p == NULL || *p == L'\0') {
+        fwprintf(stderr, L"错误：没有指定赋值的内容！\n");
+        free(variable1);
+        free(command);
+        exit(1);
+    }
+    wchar_t* var2B = p;
+    while (*p != L' ' && *p != L'\t' && *p != L'\0') {  // 查找结束的位置
+        p++;
+    }
+
+    wchar_t* var2E = p;
+    size_t length2 = var2E - var2B;
+    wchar_t* variable2 = (wchar_t*)malloc(sizeof(wchar_t) * (length2 + 1));
+    if (variable2 == NULL) {
+        free(command);
+        free(variable1);
+        fwprintf(stderr, L"内存分配失败！\n");
+        return false;
+    }
+
+    wcsncpy(variable2, var2B, length2);
+    variable2[length2] = L'\0';
+
+    fwprintf(stdout, L"变量1: %ls\n", variable1);
+    fwprintf(stdout, L"变量2: %ls\n", variable2);
+
+
+    /*******************************************************************/
+    // 转换变量值
+    double value = 0;
+    if (isInter(variable2) || isFloat(variable2)) {
+        value = (double)wcstol(variable2, NULL, 10);
+    } else {
+        value = getVariableValue(variable2);
+    }
+
+    // 执行赋值
+    assignment(variable1, value);
+
+    // 清理内存
+    free(variable2);
     free(variable1);
     free(command);
     return true;
 }
+
 #endif

@@ -1,0 +1,10 @@
+^D:\HXSCRIPT\BUILD\CMAKEFILES\281D946F930BC88592F555C165417A53\GENERATE.STAMP.RULE
+setlocal
+D:\CMake\bin\cmake.exe -SD:/HxScript -BD:/HxScript/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/HxScript/build/HxScript.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
