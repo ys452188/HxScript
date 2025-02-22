@@ -15,7 +15,7 @@ typedef struct {
     wchar_t* type;             //变量类型
     void* address;             //变量在内存中的地址
 } Variable;
-#define INITIAL_CAPACITY 16  // 初始容量
+#define INITIAL_CAPACITY 1  // 初始容量
 Variable* variableSymbolTable = NULL;    //符号表
 int variableCapacity = 0;
 void expandVariableTable() {
@@ -23,7 +23,7 @@ void expandVariableTable() {
         variableCapacity = INITIAL_CAPACITY;
         variableSymbolTable = (Variable*)malloc(sizeof(Variable) * variableCapacity);
     } else {
-        variableCapacity *= 2;
+        variableCapacity += 1;
         void* temp = realloc(variableSymbolTable, sizeof(Variable) * variableCapacity);
         if (!temp) {
             perror("错误：符号表扩容失败！");
@@ -31,6 +31,7 @@ void expandVariableTable() {
         }
         variableSymbolTable = (Variable*)temp;
     }
+    return;
 }
 void isExisted(const wchar_t* name) {
     setlocale(LC_ALL,"chinese");
@@ -87,7 +88,7 @@ void defineVariable(
         *(wchar_t*)newVariable->address = hasValue ? (wchar_t)value : L'\0';
     } else {
         fwprintf(stderr, L"\33[38;2;255;0;0m错误：没有\"%ls\"这个类型！\33[0m\n", type);
-        exit(1);
+        return;
     }
 }
 //赋值的函数
@@ -110,7 +111,7 @@ void assignment(const wchar_t* variable_name,     //目标变量的变量名
                 *(wchar_t*)variableSymbolTable[i].address = (wchar_t)value;
             }  else {
                 wprintf(L"\33[38;2;255;0;0m错误：无法确定变量%ls的类型！\33[0m\n",variable_name);
-                exit(1);
+                return;
             }
             return;
         }
@@ -119,7 +120,7 @@ void assignment(const wchar_t* variable_name,     //目标变量的变量名
             variable_name,
             variable_name,
             variable_name);
-    exit(1);
+    return;
 }
 double getVariableValue(const wchar_t* name) {
     setlocale(LC_ALL,"chinese");
@@ -137,7 +138,7 @@ double getVariableValue(const wchar_t* name) {
         }
     }
     fwprintf(stderr, L"\33[38;2;255;0;0m错误：没有%ls这个变量！\33[0m\n", name);
-    exit(1);
+    return -114514.1919810;
 }
 void defineConstantPlus(const wchar_t* type,const wchar_t* name,bool hasValue,double value) {
     setlocale(LC_ALL,"chinese");

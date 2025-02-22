@@ -28,35 +28,31 @@ wchar_t* deleteSpaceAndTab(const wchar_t* s) {
     return result;
 }
 bool isChar(const wchar_t* s) {
-    wchar_t* s1 = wcsdup(s);
-    if(s1 == NULL) {
+    setlocale(LC_ALL,"chinese");
+    if (s == NULL) return false;
+    size_t len = wcslen(s);
+    // 基础格式校验：首尾为单引号且长度至少为2
+    if (len < 2 || s[0] != L'\'' || s[len - 1] != L'\'') {
         return false;
     }
-
-    if(wcslen(s1) != 3) { // 格式：'c'，字符长度为3（包括两边的引号）
-        free(s1);
-        return false;
+    // 空字符情况（如 ''）
+    if (len == 2) return false;
+    // 处理普通字符（如 'a'）或转义字符（如 '\''）
+    if (len == 3) {
+        // 普通字符（中间字符非单引号）
+        if (s[1] != L'\'') {
+            return true;
+        }
+        // 处理转义单引号（如 '\''）
+        else if (s[1] == L'\\' && len >= 4 && s[2] == L'\'') {
+            return true;
+        }
     }
-
-    const wchar_t* p = s1;
-    if (*p != L'\'') {  // 检查第一个字符是不是单引号
-        free(s1);
-        return false;
+    // 处理其他转义序列（如 '\n'）
+    if (s[1] == L'\\') {
+        return true;
     }
-
-    p++;  // 移动到字符部分
-    if (*p == L'\'') { // 单引号内没有字符
-        free(s1);
-        return false;
-    }
-
-    if (*(p + 1) != L'\'') {  // 检查字符后是否是单引号
-        free(s1);
-        return false;
-    }
-
-    free(s1);
-    return true;
+    return false;
 }
 
 wchar_t getWChar(const wchar_t* s) {
@@ -123,7 +119,7 @@ bool isFloat(const wchar_t* s) {
     }
     return false;
 }
-/*定义变量的语句：var a: int = 0; 定义变量 变量 : int = 114;*/
+/*定义变量的语句：var a: int = 0  定义变量 变量 : int = 114*/
 bool leverDefineVariable(const wchar_t* command) {
     setlocale(LC_ALL,"chinese");
     if (command == NULL) {
@@ -153,7 +149,7 @@ bool leverDefineVariable(const wchar_t* command) {
         if (*p == L'\0') {
             fwprintf(stderr, L"错误：未指定变量名！\033[0m\n");
             free(command1);
-            exit(1);
+            return true;
         }
         wchar_t* nameB = p;  // 变量名起始位置
         // 找到变量名的终点
@@ -177,7 +173,7 @@ bool leverDefineVariable(const wchar_t* command) {
             fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定变量类型\33[0m\n");
             free(name);
             free(command1);
-            exit(1);
+            return true;
         }
         colonPos++;  // 跳过冒号
         // 跳过冒号后的空格
@@ -213,7 +209,7 @@ bool leverDefineVariable(const wchar_t* command) {
                 free(type);
                 free(name);
                 free(command1);
-                exit(1);
+                return true;
             }
             // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
             wchar_t* valueStart = equalPos;
@@ -259,7 +255,7 @@ bool leverDefineVariable(const wchar_t* command) {
                     free(type);
                     free(name);
                     free(command1);
-                    exit(1);
+                    return true;
                 }
             }
             free(cleanValue);
@@ -288,7 +284,7 @@ bool leverDefineVariable(const wchar_t* command) {
         if (*p == L'\0') {
             fwprintf(stderr, L"错误：未指定变量名！\033[0m\n");
             free(command1);
-            exit(1);
+            return true;
         }
         wchar_t* nameB = p;  // 变量名起始位置
         // 找到变量名的终点
@@ -311,7 +307,7 @@ bool leverDefineVariable(const wchar_t* command) {
             fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定变量类型\33[0m\n");
             free(name);
             free(command1);
-            exit(1);
+            return true;
         }
         colonPos++;  // 跳过冒号
         // 跳过冒号后的空格
@@ -347,7 +343,7 @@ bool leverDefineVariable(const wchar_t* command) {
                 free(type);
                 free(name);
                 free(command1);
-                exit(1);
+                return true;
             }
             // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
             wchar_t* valueStart = equalPos;
@@ -392,7 +388,7 @@ bool leverDefineVariable(const wchar_t* command) {
                     free(type);
                     free(name);
                     free(command1);
-                    exit(1);
+                    return true;
                 }
             }
             free(cleanValue);
@@ -440,7 +436,7 @@ bool leverDefineConstant(const wchar_t* command) {
         if (*p == L'\0') {
             fwprintf(stderr, L"错误：未指定常量名！\033[0m\n");
             free(command1);
-            exit(1);
+            return true;
         }
         wchar_t* nameB = p;  //起始位置
         //终点
@@ -463,7 +459,7 @@ bool leverDefineConstant(const wchar_t* command) {
             fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定常量类型\33[0m\n");
             free(name);
             free(command1);
-            exit(1);
+            return true;
         }
         colonPos++;  // 跳过冒号
         // 跳过冒号后的空格
@@ -499,7 +495,7 @@ bool leverDefineConstant(const wchar_t* command) {
                 free(type);
                 free(name);
                 free(command1);
-                exit(1);
+                return true;
             }
             // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
             wchar_t* valueStart = equalPos;
@@ -545,7 +541,7 @@ bool leverDefineConstant(const wchar_t* command) {
                     free(type);
                     free(name);
                     free(command1);
-                    exit(1);
+                    return true;
                 }
             }
             free(cleanValue);
@@ -572,7 +568,7 @@ bool leverDefineConstant(const wchar_t* command) {
         if (*p == L'\0') {
             fwprintf(stderr, L"错误：未指定变量名！\033[0m\n");
             free(command1);
-            exit(1);
+            return true;
         }
         wchar_t* nameB = p;  // 变量名起始位置
         // 找到变量名的终点
@@ -595,7 +591,7 @@ bool leverDefineConstant(const wchar_t* command) {
             fwprintf(stderr, L"\33[38;2;255;0;0m错误：未指定变量类型\33[0m\n");
             free(name);
             free(command1);
-            exit(1);
+            return true;
         }
         colonPos++;  // 跳过冒号
         // 跳过冒号后的空格
@@ -631,7 +627,7 @@ bool leverDefineConstant(const wchar_t* command) {
                 free(type);
                 free(name);
                 free(command1);
-                exit(1);
+                return true;
             }
             // 提取初始值字符串直到遇到分隔符（例如空格或分号）或字符串末尾
             wchar_t* valueStart = equalPos;
@@ -676,7 +672,7 @@ bool leverDefineConstant(const wchar_t* command) {
                     free(type);
                     free(name);
                     free(command1);
-                    exit(1);
+                    return true;
                 }
             }
             free(cleanValue);
@@ -724,7 +720,7 @@ bool callFunction(const wchar_t* Ucommand) {
         if (*p == L'\0') {
             fwprintf(stderr, L"\033[38;2;255;0;0m错误：未知的调用函数！\033[0m\n");
             free(commandDup);
-            return false;
+            return true;
         }
         wchar_t* functionBegin = p;
         while (*p != L'(' && *p != L' ' && *p != L'\t' && *p != L'\0') {
@@ -733,15 +729,11 @@ bool callFunction(const wchar_t* Ucommand) {
         if (*p == L'\0') {
             fwprintf(stderr, L"\033[38;2;255;0;0m错误：调用函数的语法不正确！\033[0m\n");
             free(commandDup);
-            return false;
+            return true;
         }
-        wchar_t functionName[128] = {0};
+        wchar_t *functionName = NULL;
         size_t len = p - functionBegin;
-        if (len >= 128) {
-            fwprintf(stderr, L"错误：函数名过长！\n");
-            free(commandDup);
-            return false;
-        }
+        functionName = (wchar_t*)malloc(len*sizeof(wchar_t));
         wcsncpy(functionName, functionBegin, len);
         functionName[len] = L'\0';  // 确保字符串终止
         // 处理参数部分
@@ -753,7 +745,7 @@ bool callFunction(const wchar_t* Ucommand) {
             if (argsLen >= 256) {
                 fwprintf(stderr, L"错误：参数列表过长！\n");
                 free(commandDup);
-                return false;
+                return true;
             }
             wcsncpy(args, argsStart + 1, argsLen);
             args[argsLen] = L'\0';
@@ -780,12 +772,10 @@ bool leverAssignment(const wchar_t* command1) {
     wchar_t* command = wcsdup(command1);
     if (command == NULL) {
         fwprintf(stderr, L"内存分配失败！\n");
-        return false;
+        exit(1);
     }
-
     wchar_t* p = command;
     int equalSignCount = 0;
-
     // 计算等号的数量
     while (*p != L'\0') {
         if (*p == L'=') {
@@ -793,25 +783,21 @@ bool leverAssignment(const wchar_t* command1) {
         }
         p++;
     }
-
-    if (equalSignCount != 1) {  // 如果等号数不是1，返回错误
+    if (equalSignCount != 1) { 
         free(command);
         return false;
     }
-
     p = wcsstr(command, L"=");  // 查找第一个等号的位置
     if (p == NULL) {
         fwprintf(stderr, L"错误：没有指定需赋值的目标变量！\n");
         free(command);
         return false;
     }
-
     // 反向遍历查找目标变量
     wchar_t* var1E = p - 1;
     while (var1E >= command && (*var1E == L' ' || *var1E == L'\t')) {
         var1E--;
     }
-
     // 反向查找变量名的开始位置
     wchar_t* var1B = var1E;
     while (var1B >= command && *var1B != L' ' && *var1B != L'\t' && *var1B != L'=') {
@@ -824,7 +810,7 @@ bool leverAssignment(const wchar_t* command1) {
     if (variable1 == NULL) {
         free(command);
         fwprintf(stderr, L"内存分配失败！\n");
-        return false;
+        exit(1);
     }
 
     wcsncpy(variable1, var1B, length);
@@ -836,7 +822,7 @@ bool leverAssignment(const wchar_t* command1) {
         fwprintf(stderr, L"错误：变量名不能是数字！\n");
         free(variable1);
         free(command);
-        exit(1);
+        return true;
     }
     /*******************************************************************/
 
@@ -850,7 +836,7 @@ bool leverAssignment(const wchar_t* command1) {
         fwprintf(stderr, L"错误：没有指定赋值的内容！\n");
         free(variable1);
         free(command);
-        exit(1);
+        return true;
     }
     wchar_t* var2B = p;
     while (*p != L' ' && *p != L'\t' && *p != L'\0') {  // 查找结束的位置
@@ -864,7 +850,7 @@ bool leverAssignment(const wchar_t* command1) {
         free(command);
         free(variable1);
         fwprintf(stderr, L"内存分配失败！\n");
-        return false;
+        exit(1);
     }
 
     wcsncpy(variable2, var2B, length2);
@@ -877,15 +863,13 @@ bool leverAssignment(const wchar_t* command1) {
     /*******************************************************************/
     // 转换变量值
     double value = 0;
-    if (isInter(variable2) || isFloat(variable2)) {
+    if (isInter(variable2) || isFloat(variable2) || isChar(variable2)) {
         value = (double)wcstol(variable2, NULL, 10);
     } else {
         value = getVariableValue(variable2);
     }
-
     // 执行赋值
     assignment(variable1, value);
-
     // 清理内存
     free(variable2);
     free(variable1);

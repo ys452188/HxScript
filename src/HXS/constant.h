@@ -12,17 +12,22 @@ typedef struct {
     wchar_t *type;      // 常量类型
     void* address;      // 常量地址
 } Constant;
-#define INITIAL_CAPACITY 16  // 初始符号表容量
+#define INITIAL_CAPACITY 1  // 初始符号表容量
 Constant* constantSymbolTable = NULL;  // 动态数组
 int constantCapacity = 0;  // 当前符号表容量
-// **扩容函数**：每次扩容 2 倍
+// **扩容函数**
 void expandConstantTable() {
     if (constantCapacity == 0) {
         constantCapacity = INITIAL_CAPACITY;
         constantSymbolTable = (Constant*)malloc(sizeof(Constant) * constantCapacity);
     } else {
-        constantCapacity *= 2;
-        constantSymbolTable = (Constant*)realloc(constantSymbolTable, sizeof(Constant) * constantCapacity);
+        constantCapacity += 1;
+        void* temp = (Constant*)realloc(constantSymbolTable, sizeof(Constant) * constantCapacity);
+        if (!temp) {
+            perror("错误：符号表扩容失败！");
+            exit(1);
+        }
+        constantSymbolTable = (Constant*)temp;
     }
     if (!constantSymbolTable) {
         perror("\33[38;2;255;0;0m错误：符号表扩容失败！\33[0m\n");
@@ -67,7 +72,7 @@ void defineConstant(const wchar_t* type, const wchar_t* name, bool hasValue, dou
         *(wchar_t*)newConstant->address = hasValue ? (wchar_t)value : L'\0';
     } else {
         wprintf(L"\33[38;2;255;0;0m错误：没有 \"%ls\" 这个类型！\33[0m\n", type);
-        exit(1);
+        return;
     }
     constantCount++;  // 更新常量计数
 }
@@ -88,7 +93,7 @@ double getConstantValue(const wchar_t* name) {
         }
     }
     fwprintf(stderr, L"\33[38;2;255;0;0m错误：没有 %ls 这个常量！\33[0m\n", name);
-    exit(1);
+    return -114514.1919810;
 }
 // **释放符号表内存**
 void freeConstantTable() {

@@ -7,6 +7,7 @@
 #include "HXS/constant.h"
 #include "HXS/HXS_out.h"
 void isExisted(const wchar_t* name);
+void runShellMode(const wchar_t* command);
 void cleanUpVariableAndConstant(void);
 void defineConstantPlus(const wchar_t* type,const wchar_t* name,bool hasValue,double value);
 void defineVariablePlus(const wchar_t* type,const wchar_t* name,bool hasValue,double value);
@@ -17,7 +18,7 @@ int main(void) {
     //测试
     setlocale(LC_ALL,"chinese");
     while (true) {
-        run(getLineFromStdin());
+        runShellMode(getLineFromStdin());
     }
     getchar();
     return 0;
@@ -35,6 +36,10 @@ void cleanUpVariableAndConstant(void) {
         free(constantSymbolTable[j].name);
         free(constantSymbolTable[j].type);
     }
+    free(variableSymbolTable);
+    free(constantSymbolTable);
+    variableCount = 0;
+    constantCount = 0;
     return;
 }
 void run(const wchar_t* command) {
@@ -45,7 +50,7 @@ void run(const wchar_t* command) {
     if(leverDefineVariable(command)) {
         return;
     } else if(leverDefineConstant(command)) {
-        return; 
+        return;
     } else if(leverAssignment(command)) {
         return;
     } else {
@@ -53,4 +58,8 @@ void run(const wchar_t* command) {
         return;
     }
     return;
+}
+void runShellMode(const wchar_t* command) {
+    run(command);
+    cleanUpVariableAndConstant();
 }
